@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #999;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    background-color: yellow;
+    border-bottom: 1px solid #000;
+}
+
+.ball {
+    width: 500px;
+    height: 500px;
+    background-color: rebeccapurple;
+    border-bottom: 1px solid red;
+    clip-path: circle(20% at 20% 20%);
+    animation: rimbalza 3s infinite;
+}
+
+@keyframes rimbalza {
+    25% {
+        clip-path: circle(20% at 50% 80%);
+    }
+
+    50% {
+        clip-path: circle(20% at 80% 20%);
+    }
+
+    75% {
+        clip-path: circle(20% at 50% 80%);
+    }
+
+    100% {
+        clip-path: circle(20% at 20% 20%);
+    }
+}
