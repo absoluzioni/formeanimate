@@ -46,26 +46,27 @@ piano.addEventListener("click", function() {
 
 
 filterImages.forEach(function(element) {
-    let myAttribute = element.getAttribute('data-filter') 
-    let myImage = element.querySelector(`[data-filter = "${myAttribute}"] > img`)
-    let description = element.querySelector(`[data-filter = "${myAttribute}"] > .description`);
-    element.addEventListener("click", function(e) {
-        if (!myImage.classList.contains("filter-none")) {
+    element.addEventListener("click", function() {
+        let myAttribute = element.getAttribute('data-filter') ;
+        let myImage = element.querySelector(`[data-filter = "${myAttribute}"] > img`);
+        let myDescription = element.querySelector(`[data-filter = "${myAttribute}"] > p.description`);
+        console.log(myImage);
+        if (myImage.classList.contains("filter-none")) {
             myImage.classList.add("filter-none");
-            description.classList.add("no-display");
+            myDescription.classList.add("no-display");
         } else {
             myImage.classList.remove("filter-none");
-            description.classList.remove("no-display");
+            myDescription.classList.remove("no-display");
         }
     });
 });
 
 filterElements.forEach(function(element) {
-    element.addEventListener("click", function(e) {
-        if (!e.target.classList.contains("filter-none")) {
-            e.target.classList.add("filter-none");
+    element.addEventListener("click", function() {
+        if (!element.classList.contains("filter-none")) {
+            element.classList.add("filter-none");
         } else {
-            e.target.classList.remove("filter-none");
+            element.classList.remove("filter-none");
         }
     });
 });
